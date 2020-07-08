@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container my-3 p-5">
+    <div class="row mb-2">
+        {% for semester in semesters %}
+        <div class="col-md-6">
+            <div class="card" style="width: 25rem; ">
+                <div class="card-body">
+                    <h5 class="card-title">Semester {{semester.sem}}</h5>
+                    <h6 class="card-subtitle mb-2 text-disable">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="card-link">View Subjects</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:2 and not forloop.last%}
+            </div><div class="row mb-2">
+        {% endif %}
+        {% endfor %}
+        
+    </div>
+</div>
+    {% endblock body %}
